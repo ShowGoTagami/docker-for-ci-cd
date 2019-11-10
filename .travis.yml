@@ -5,7 +5,7 @@ services:
 language: generic
 
 before_install:
-  - docker build -t ShowGoTagami/docker-for-ci-cd -f Dockerfile.dev .
+  - docker build -t showgotagami/docker-for-ci-cd -f Dockerfile.dev .
 
 script:
-  - docker run -e CI=true ShowGoTagami/docker-for-ci-cd npm run test
+  - docker run -e CI=true showgotagami/docker-for-ci-cd npm run test
