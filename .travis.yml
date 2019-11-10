@@ -1,0 +1,11 @@
+sudo: required
+services:
+  - docker
+
+language: generic
+
+before_install:
+  - docker build -t showgotagami/docker-for-ci-cd -f Dockerfile.dev .
+
+script:
+  - docker run -e CI=true showgotagami/docker-for-ci-cd npm run test
